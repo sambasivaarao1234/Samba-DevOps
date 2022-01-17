@@ -1,0 +1,10 @@
+pipeline {
+agent any 
+stages {
+  stage 'Build SRC' {
+  steps {
+     bat ' C:\Programme\maven\bin\mvn clean install -f Samba\Samba_Root\pom.xml '
+	                 }
+				}	 
+			}	
+		}		
