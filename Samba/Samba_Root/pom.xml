@@ -19,12 +19,12 @@
 		<repository>
 			<id>releases</id>
 			<name>Release Repository</name>
-			<url>http://ec2amaz-jo0hdhh:8081/nexus/content/repositories/releases/</url>
+			<url>http://ec2amaz-j6hdctv:8081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Snapshot Repository</name>
-			<url>http://ec2amaz-jo0hdhh:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://ec2amaz-j6hdctv:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement> 
 </project>
