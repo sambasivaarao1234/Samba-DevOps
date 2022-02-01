@@ -1,0 +1,30 @@
+ pipeline{
+   agent any
+
+     stages{
+       stage("Git Checkout"){
+          steps{
+               git credentialsId: 'e5c1f704-a386-4868-9c3f-93dfcc913e17', url: 'https://github.com/sambasivaarao1234/Samba-DevOps.git'
+            }
+     }
+       stage ("Maven Build"){
+          steps{
+             "mvn clean package"
+            }
+     }
+       stage("deploy-Tomcat"){
+       steps{
+          sshagent(['Tomcat']) {
+          sh """
+          scp -o StrictHostKeyChecking=no target/myweb.war  
+          ubuntu@10.0.0.33:/apps/samba.tc.server/webapps/
+          ssh ubuntu@10.0.0.33 /apps/samba.tc.server/bin/shutdown.sh
+          ssh ubuntu@10.0.0.33 /apps/samba.tc.server/bin/startup.sh
+           """
+            }
+          }
+        }
+                        
+ 
+        
+               
