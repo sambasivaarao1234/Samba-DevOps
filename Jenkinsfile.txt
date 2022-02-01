@@ -8,8 +8,9 @@
             }
      }
        stage ("Maven Build"){
-          steps{
-             "mvn clean package"
+          steps {
+              bat '''
+                  C:/Programme/Maven/bin/mvn clean install -f %Module%/%Module%_ROOT/pom.xml
             }
      }
        stage("deploy-Tomcat"){
